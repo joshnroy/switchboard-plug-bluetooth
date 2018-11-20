@@ -217,10 +217,13 @@ public class Bluetooth.MainView : Granite.SimpleSettingsPage {
     private void update_description (string? name, bool discoverable, bool powered) {
         if (discoverable && powered) {
             description = DISCOVERABLE.printf (name ?? _("Unknown"));
+            icon_name = "bluetooth";
         } else if (!powered) {
             description = POWERED_OFF;
+            icon_name = "bluetooth-disabled";
         } else {
             description = UNDISCOVERABLE;
+            icon_name = "bluetooth-disabled";
         }
     }
 
